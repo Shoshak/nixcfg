@@ -55,11 +55,16 @@
     neofetch
     webcord
     firefox
+    libsForQt5.kate
   ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "Shoshak";
+    userEmail = "Shoshak@github.com";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

@@ -114,12 +114,6 @@
   services.xserver.displayManager.defaultSession = "plasmawayland";
   services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11
-  # services.xserver = {
-  #   layout = "us";
-  #   xkbVariant = "";
-  # };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -144,6 +138,9 @@
     libnotify
   ];
   services.flatpak.enable = true;
+
+  hardware.opengl.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
