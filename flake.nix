@@ -28,11 +28,7 @@
       motodesktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [
-	  ./nixos/configuration.nix
-	  nixos-hardware.nixosModules.common-pc-ssd
-	  nixos-hardware.nixosModules.common-gpu-amd
-	];
+        modules = [ ./nixos/configuration.nix ];
       };
     };
   };

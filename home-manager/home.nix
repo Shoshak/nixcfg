@@ -56,6 +56,7 @@
     webcord
     firefox
     libsForQt5.kate
+    gh
   ];
 
   # Enable home-manager and git
