@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  outputs,
   ...
 }: {
   # You can import other NixOS modules here
@@ -18,6 +19,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   nixpkgs = {
@@ -37,6 +39,13 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      moto = import ../home-manager/home.nix;
     };
   };
 
@@ -134,6 +143,7 @@
     xdg-desktop-portal-kde
     libnotify
   ];
+  services.flatpak.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
