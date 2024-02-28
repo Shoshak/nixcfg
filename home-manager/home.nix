@@ -57,6 +57,7 @@
     firefox
     libsForQt5.kate
     gh
+    element-desktop
   ];
 
   # Enable home-manager and git
