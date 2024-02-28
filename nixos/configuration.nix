@@ -71,8 +71,6 @@
     auto-optimise-store = true;
   };
 
-  networking.hostName = "motodesktop";
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -105,7 +103,10 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
+  # Networking
+  networking.hostName = "motodesktop";
   networking.networkmanager.enable = true;
+  networking.interfaces.eno1.mtu = 1280; # Steam fix, see https://github.com/ValveSoftware/steam-for-linux/issues/10297
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -138,6 +139,7 @@
   environment.systemPackages = with pkgs; [
     xdg-desktop-portal-kde
     libnotify
+    wl-clipboard
   ];
   services.flatpak.enable = true;
 
