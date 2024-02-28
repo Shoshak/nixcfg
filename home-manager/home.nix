@@ -56,16 +56,21 @@
     webcord
     firefox
     libsForQt5.kate
-    gh
     element-desktop
   ];
 
-  # Enable home-manager and git
+  # Enable home-manager
   programs.home-manager.enable = true;
+
+  # Setup git with gh credential manager
   programs.git = {
     enable = true;
     userName = "Shoshak";
     userEmail = "Shoshak@github.com";
+  };
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
   };
 
   # Nicely reload system units when changing configs
