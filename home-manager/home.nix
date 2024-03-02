@@ -57,6 +57,7 @@
     firefox
     libsForQt5.kate
     element-desktop
+    gnumake
   ];
 
   # Enable home-manager
