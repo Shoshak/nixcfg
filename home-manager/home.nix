@@ -57,7 +57,12 @@
     firefox
     libsForQt5.kate
     element-desktop
-    gnumake
+    nerdfonts
+    prismlauncher
+    jdk17
+    yt-dlp
+    haruna
+    ardour
   ];
 
   # Enable home-manager
